@@ -1,0 +1,115 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\AD\\source\\repos\\DangNhap\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{909B3E2E-E7CD-4464-AFFE-B7E06DB8772E}|ADMINDASHBOARD\\ADMINDASHBOARD.csproj|c:\\users\\ad\\source\\repos\\dangnhap\\admindashboard\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{909B3E2E-E7CD-4464-AFFE-B7E06DB8772E}|ADMINDASHBOARD\\ADMINDASHBOARD.csproj|solutionrelative:admindashboard\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5E6E565-5FCE-40D2-8FF4-CC371434A1D0}|..\\Login\\Login.csproj|c:\\users\\ad\\source\\repos\\login\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5E6E565-5FCE-40D2-8FF4-CC371434A1D0}|..\\Login\\Login.csproj|c:\\users\\ad\\source\\repos\\login\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5E6E565-5FCE-40D2-8FF4-CC371434A1D0}|..\\Login\\Login.csproj|c:\\users\\ad\\source\\repos\\login\\connect\\connect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87449FF6-886E-4663-9112-2F2150448480}|..\\Register\\Register.csproj|c:\\users\\ad\\source\\repos\\register\\register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87449FF6-886E-4663-9112-2F2150448480}|..\\Register\\Register.csproj|c:\\users\\ad\\source\\repos\\register\\register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 90,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\AD\\source\\repos\\DangNhap\\ADMINDASHBOARD\\Form1.cs",
+              "RelativeDocumentMoniker": "ADMINDASHBOARD\\Form1.cs",
+              "ToolTip": "C:\\Users\\AD\\source\\repos\\DangNhap\\ADMINDASHBOARD\\Form1.cs [Design]",
+              "RelativeToolTip": "ADMINDASHBOARD\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T09:22:12.331Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Connect.cs",
+              "DocumentMoniker": "C:\\Users\\AD\\source\\repos\\Login\\Connect\\Connect.cs",
+              "RelativeDocumentMoniker": "..\\Login\\Connect\\Connect.cs",
+              "ToolTip": "C:\\Users\\AD\\source\\repos\\Login\\Connect\\Connect.cs",
+              "RelativeToolTip": "..\\Login\\Connect\\Connect.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T16:57:45.93Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\AD\\source\\repos\\Login\\Form1.cs",
+              "RelativeDocumentMoniker": "..\\Login\\Form1.cs",
+              "ToolTip": "C:\\Users\\AD\\source\\repos\\Login\\Form1.cs",
+              "RelativeToolTip": "..\\Login\\Form1.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAgwBsAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T16:35:26.873Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\AD\\source\\repos\\Login\\Form1.cs",
+              "RelativeDocumentMoniker": "..\\Login\\Form1.cs",
+              "ToolTip": "C:\\Users\\AD\\source\\repos\\Login\\Form1.cs [Design]",
+              "RelativeToolTip": "..\\Login\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T16:35:23.635Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Register.cs",
+              "DocumentMoniker": "C:\\Users\\AD\\source\\repos\\Register\\Register.cs",
+              "RelativeDocumentMoniker": "..\\Register\\Register.cs",
+              "ToolTip": "C:\\Users\\AD\\source\\repos\\Register\\Register.cs",
+              "RelativeToolTip": "..\\Register\\Register.cs",
+              "ViewState": "AgIAAFIAAAAAAAAAAAAkwCMAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T16:31:28.012Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Register.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\AD\\source\\repos\\Register\\Register.cs",
+              "RelativeDocumentMoniker": "..\\Register\\Register.cs",
+              "ToolTip": "C:\\Users\\AD\\source\\repos\\Register\\Register.cs [Design]",
+              "RelativeToolTip": "..\\Register\\Register.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T16:31:25.952Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+C:\Users\AD\source\repos\DangNhap\obj\Debug\DangNhap.csproj.AssemblyReference.cache
+C:\Users\AD\source\repos\DangNhap\obj\Debug\DangNhap.Properties.Resources.resources
+C:\Users\AD\source\repos\DangNhap\obj\Debug\DangNhap.csproj.GenerateResource.cache
+C:\Users\AD\source\repos\DangNhap\obj\Debug\DangNhap.csproj.CoreCompileInputs.cache
+C:\Users\AD\source\repos\DangNhap\bin\Debug\DangNhap.exe.config
+C:\Users\AD\source\repos\DangNhap\bin\Debug\DangNhap.exe
+C:\Users\AD\source\repos\DangNhap\bin\Debug\DangNhap.pdb
+C:\Users\AD\source\repos\DangNhap\bin\Debug\Guna.UI2.dll
+C:\Users\AD\source\repos\DangNhap\obj\Debug\DangNhap.csproj.Up2Date
+C:\Users\AD\source\repos\DangNhap\obj\Debug\DangNhap.exe
+C:\Users\AD\source\repos\DangNhap\obj\Debug\DangNhap.pdb
+C:\Users\AD\source\repos\DangNhap\obj\Debug\DangNhap.exe.config
+C:\Users\AD\source\repos\DangNhap\obj\Debug\DangNhap.LOGINFRAME.resources
