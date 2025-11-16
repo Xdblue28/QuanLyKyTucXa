@@ -11,7 +11,7 @@ namespace QLKTX_SV
 {
     public class DBConnect
     {
-        private static readonly string url = @"Data Source=TD-Hau;Initial Catalog=QLKTX_SV;Persist Security Info=True;User ID=sa;Password=29082005;";
+        private static readonly string url = @"Data Source=TD-Hau;Initial Catalog=QuanlyKiTucXa;Persist Security Info=True;User ID=sa;Password=29082005;";
         public static SqlConnection GetConnection()
         {
             return new SqlConnection(url);

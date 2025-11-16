@@ -20,11 +20,13 @@ namespace QLKTX_SV
         DataTable dt;
         void LoadData()
         {
-            cmd = new SqlCommand("SELECT * FROM QuanLyHoaDonDienNuoc", conn);
+            cmd = new SqlCommand("SELECT * FROM HoaDonDienNuoc", conn);
             ad = new SqlDataAdapter(cmd);
             dt = new DataTable();
             ad.Fill(dt);
             dgvHoaDonDienNuoc.DataSource = dt;
+            dgvHoaDonDienNuoc.ClearSelection();
+            dgvHoaDonDienNuoc.CurrentCell = null;
         }
         void Xoa()
         {
@@ -57,11 +59,11 @@ namespace QLKTX_SV
 
         private void Quan_ly_hoa_don_dien_nuoc_Load(object sender, EventArgs e)
         {
-            if (DBConnect.TestConnection())
-            {
-                MessageBox.Show("Kết nối cơ sở dữ liệu thành công!");
+           // if (DBConnect.TestConnection())
+            
+              //  MessageBox.Show("Kết nối cơ sở dữ liệu thành công!");
                 LoadData();
-            }
+            
             cmbTinhTrangHoaDon.Items.Clear();
             cmbTinhTrangHoaDon.Items.Add("Đã thanh toán");
             cmbTinhTrangHoaDon.Items.Add("Chưa thanh toán");
@@ -81,7 +83,7 @@ namespace QLKTX_SV
                 using (SqlConnection conn = DBConnect.GetConnection())
                 {
                     conn.Open();
-                    string check = @"SELECT COUNT (*) FROM QuanLyHoaDonDienNuoc WHERE MaHoaDon = @MaHoaDon";
+                    string check = @"SELECT COUNT (*) FROM HoaDonDienNuoc WHERE MaHoaDon = @MaHoaDon";
                     SqlCommand cmdCheck = new SqlCommand(check, conn);
                     cmdCheck.Parameters.AddWithValue("@MaHoaDon", txtMaHoaDon.Text);
                     int dem = (int)cmdCheck.ExecuteScalar();
@@ -91,7 +93,7 @@ namespace QLKTX_SV
                     }
                     else
                     {
-                        string sql = "INSERT INTO QuanLyHoaDonDienNuoc(MaHoaDon, TenHoaDon, TienDien, TienNuoc, NgayTaoHoaDon, IDPhong, TinhTrangHoaDon)VALUES(@MaHoaDon,@TenHoaDon, @TienDien, @TienNuoc, @NgayTaoHoaDon, @IDPhong, @TinhTrangHoaDon)";
+                        string sql = "INSERT INTO HoaDonDienNuoc(MaHoaDon, TenHoaDon, TienDien, TienNuoc, NgayTaoHoaDon, IDPhong, TinhTrangHoaDon)VALUES(@MaHoaDon,@TenHoaDon, @TienDien, @TienNuoc, @NgayTaoHoaDon, @IDPhong, @TinhTrangHoaDon)";
                         SqlCommand cmd = new SqlCommand(sql,conn);
                         cmd.Parameters.AddWithValue("@MaHoaDon", txtMaHoaDon.Text.Trim());
                         cmd.Parameters.AddWithValue("@TenHoaDon", txtTenHoaDon.Text.Trim());
@@ -105,6 +107,7 @@ namespace QLKTX_SV
                             MessageBox.Show("Thêm Thành Công!!!","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
                             Xoa();
                             LoadData();
+
                         }
                     }
 
@@ -135,7 +138,7 @@ namespace QLKTX_SV
                 using(SqlConnection conn = DBConnect.GetConnection())
                 {
                     conn.Open();
-                    string sql = @"DELETE FROM QuanLyHoaDonDienNuoc WHERE MaHoaDon = @MaHoaDon";
+                    string sql = @"DELETE FROM HoaDonDienNuoc WHERE MaHoaDon = @MaHoaDon";
                     SqlCommand cmd = new SqlCommand(sql,conn);
                     cmd.Parameters.AddWithValue("@MaHoaDon",txtMaHoaDon.Text.Trim());
                     int row = cmd.ExecuteNonQuery();
@@ -171,14 +174,14 @@ namespace QLKTX_SV
                 {
                     conn.Open();
                     string oldMaHoaDon = txtMaHoaDon.Text.Trim();
-                    string sql = @"UPDATE QuanLyHoaDonDienNuoc SET MaHoaDon = @MaHoaDon, TenHoaDon = @TenHoaDon, TienDien = @TienDien, TienNuoc =@TienNuoc, NgayTaoHoaDon = @NgayTaoHoaDon, IDPhong =@IDPhong, TinhTrangHoaDon = @TinhTrangHoaDon WHERE MaHoaDon = @OldMaHoaDon";
+                    string sql = @"UPDATE HoaDonDienNuoc SET MaHoaDon = @MaHoaDon, TenHoaDon = @TenHoaDon, TienDien = @TienDien, TienNuoc =@TienNuoc, NgayTaoHoaDon = @NgayTaoHoaDon, MaPhong =@MaPhong, TinhTrangHoaDon = @TinhTrangHoaDon WHERE MaHoaDon = @OldMaHoaDon";
                     SqlCommand cmd = new SqlCommand(sql, conn);
                     cmd.Parameters.AddWithValue("@MaHoaDon", txtMaHoaDon.Text.Trim());
                     cmd.Parameters.AddWithValue("@TenHoaDon", txtTenHoaDon.Text.Trim());
                     cmd.Parameters.AddWithValue("@TienDien", decimal.Parse(txtTienDien.Text.Trim()));
                     cmd.Parameters.AddWithValue("@TienNuoc", decimal.Parse(txtTienNuoc.Text.Trim()));
                     cmd.Parameters.AddWithValue("@NgayTaoHoaDon", NgayTaoHoaDon.Value.Date);
-                    cmd.Parameters.AddWithValue("@IDPhong", txtIDPhong.Text.Trim());
+                    cmd.Parameters.AddWithValue("@MaPhong", txtIDPhong.Text.Trim());
                     cmd.Parameters.AddWithValue("@TinhTrangHoaDon", cmbTinhTrangHoaDon.SelectedItem.ToString());
                     cmd.Parameters.AddWithValue("@OldMaHoaDon", oldMaHoaDon);
                     int kt = cmd.ExecuteNonQuery();
@@ -201,11 +204,11 @@ namespace QLKTX_SV
 
         private void btnTimMaPhong_Click(object sender, EventArgs e)
         {
-            string maHoaDon = txtTimIDPhong.Text.Trim();
+             
 
-            if (maHoaDon == "")
+            if (txtTimIDPhong.Text.Trim() == "")
             {
-                MessageBox.Show("Vui lòng nhập mã hóa đơn cần tìm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Vui lòng nhập mã phòng cần tìm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -214,9 +217,9 @@ namespace QLKTX_SV
                 using (SqlConnection conn = DBConnect.GetConnection())
                 {
                     conn.Open();
-                    string sql = "SELECT * FROM QuanLyHoaDonDienNuoc WHERE IDPhong = @IDPhong";
+                    string sql = "SELECT * FROM HoaDonDienNuoc WHERE RTRIM(MaPhong) = @MaPhong";
                     SqlCommand cmd = new SqlCommand(sql, conn);
-                    cmd.Parameters.AddWithValue("@IDPhong", maHoaDon);
+                    cmd.Parameters.AddWithValue("@MaPhong", txtTimIDPhong.Text.Trim());
 
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
@@ -225,10 +228,12 @@ namespace QLKTX_SV
                     if (dt.Rows.Count > 0)
                     {
                         dgvHoaDonDienNuoc.DataSource = dt;
+                        dgvHoaDonDienNuoc.ClearSelection();
+                        dgvHoaDonDienNuoc.CurrentCell = null;
                     }
                     else
                     {
-                        MessageBox.Show("Không tìm thấy hóa đơn có mã này!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Không tìm thấy phòng có mã này!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         dgvHoaDonDienNuoc.DataSource = null;
                     }
                 }
@@ -237,6 +242,16 @@ namespace QLKTX_SV
             {
                 MessageBox.Show("Lỗi khi tìm kiếm: " + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void txtTienNuoc_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label19_Click(object sender, EventArgs e)
+        {
+
         }
     }
     }

@@ -17,6 +17,7 @@ namespace QLKTX_SV
         SqlCommand cmd;
         DataTable tb;
         SqlDataAdapter ad;
+        
         void LoadData()
         {
             cmd = new SqlCommand("SELECT * FROM QuanLyThietBiPhong", conn);
@@ -24,6 +25,9 @@ namespace QLKTX_SV
             tb = new DataTable();
             ad.Fill(tb);
             dgvQuanLyThietBiPhong.DataSource = tb;
+            dgvQuanLyThietBiPhong.ClearSelection();
+            dgvQuanLyThietBiPhong.CurrentCell = null;
+
         }
         void Xoa()
         {
@@ -39,15 +43,20 @@ namespace QLKTX_SV
         public Quan_ly_thiet_bi_phong()
         {
             InitializeComponent();
+            
         }
 
         private void Quan_ly_thiet_bi_phong_Load(object sender, EventArgs e)
         {
             if (DBConnect.TestConnection())
             {
-                MessageBox.Show("Kết nối cơ sở dữ liệu thành công!");
+               // MessageBox.Show("Kết nối cơ sở dữ liệu thành công!");
                 LoadData();
             }
+            //dgvQuanLyThietBiPhong.DefaultCellStyle.ForeColor = Color.Black;
+            //dgvQuanLyThietBiPhong.RowsDefaultCellStyle.ForeColor = Color.Black;
+            //dgvQuanLyThietBiPhong.AlternatingRowsDefaultCellStyle.ForeColor = Color.Black;
+
 
         }
 
@@ -61,7 +70,7 @@ namespace QLKTX_SV
 
             if (txtTimIDPhong.Text.Trim() == "")
             {
-                MessageBox.Show("Vui lòng nhập mã hóa đơn cần tìm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Vui lòng nhập mã mã phòng cần tìm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -70,9 +79,9 @@ namespace QLKTX_SV
                 using (SqlConnection conn = DBConnect.GetConnection())
                 {
                     conn.Open();
-                    string sql = "SELECT * FROM QuanLyThietBiPhong WHERE IDPhong = @IDPhong";
+                    string sql = "SELECT * FROM QuanLyThietBiPhong WHERE RTRIM(MaPhong) = @MaPhong";
                     SqlCommand cmd = new SqlCommand(sql, conn);
-                    cmd.Parameters.AddWithValue("@IDPhong", txtTimIDPhong.Text.Trim());
+                    cmd.Parameters.AddWithValue("@MaPhong", txtTimIDPhong.Text.Trim());
 
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
@@ -81,10 +90,12 @@ namespace QLKTX_SV
                     if (dt.Rows.Count > 0)
                     {
                         dgvQuanLyThietBiPhong.DataSource = dt;
+                        dgvQuanLyThietBiPhong.ClearSelection();
+                        dgvQuanLyThietBiPhong.CurrentCell = null;
                     }
                     else
                     {
-                        MessageBox.Show("Không tìm thấy ID Phòng này", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Không tìm thấy Mã Phòng này", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         dgvQuanLyThietBiPhong.DataSource = null;
                     }
                 }
@@ -127,10 +138,10 @@ namespace QLKTX_SV
                 using (SqlConnection conn = DBConnect.GetConnection())
                 {
                     conn.Open();
-                    string checkSql = "SELECT COUNT(*) FROM QuanLyThietBiPhong WHERE MaThietBi = @MaThietBi AND IDPhong = @IDPhong";
+                    string checkSql = "SELECT COUNT(*) FROM QuanLyThietBiPhong WHERE MaThietBi = @MaThietBi AND MaPhong = @MaPhong";
                     SqlCommand checkCmd = new SqlCommand(checkSql, conn);
                     checkCmd.Parameters.AddWithValue("@MaThietBi", txtMaThietBi.Text);
-                    checkCmd.Parameters.AddWithValue("@IDPhong", txtIDPhong.Text);
+                    checkCmd.Parameters.AddWithValue("@MaPhong", txtIDPhong.Text);
 
                     int count = (int)checkCmd.ExecuteScalar();
                     if (count > 0)
@@ -138,11 +149,11 @@ namespace QLKTX_SV
                         MessageBox.Show("Thiết bị này đã tồn tại trong phòng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
-                    string sql = "INSERT INTO QuanLyThietBiPhong(MaThietBi, TenThietBi, IDPhong, SoLuongHong,SoLuongToiDa, SoLuongThietBi) VALUES(@MaThietBi, @TenThietBi, @IDPhong, @SoLuongHong, @SoLuongToiDa, @SoLuongThietBi)";
+                    string sql = "INSERT INTO QuanLyThietBiPhong(MaThietBi, TenThietBi, MaPhong, SoLuongHong,SoLuongToiDa, SoLuongThietBi) VALUES(@MaThietBi, @TenThietBi, @MaPhong, @SoLuongHong, @SoLuongToiDa, @SoLuongThietBi)";
                     SqlCommand cmd = new SqlCommand(sql, conn);
                     cmd.Parameters.AddWithValue("@MaThietBi", txtMaThietBi.Text);
                     cmd.Parameters.AddWithValue("@TenThietBi", txtTenThietBi.Text);
-                    cmd.Parameters.AddWithValue("@IDPhong", txtIDPhong.Text);
+                    cmd.Parameters.AddWithValue("@MaPhong", txtIDPhong.Text);
                     cmd.Parameters.AddWithValue("@SoLuongHong", nudSoLuongHong.Value);
                     cmd.Parameters.AddWithValue("@SoLuongToiDa", nudSoLuongToiDa.Value);
                     cmd.Parameters.AddWithValue("@SoLuongThietBi", nudSoLuongThietBi.Value);
@@ -183,7 +194,7 @@ namespace QLKTX_SV
         {
             try
             {
-                if (string.IsNullOrWhiteSpace(txtMaThietBi.Text))
+                if (txtMaThietBi.Text =="")
                 {
                     MessageBox.Show("Vui lòng nhập Mã thiết bị!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
@@ -203,12 +214,12 @@ namespace QLKTX_SV
                 {
                     conn.Open();
 
-                    string sql = @"UPDATE QuanLyThietBiPhong SET TenThietBi = @TenThietBi, SoLuongThietBi = @SoLuongThietBi, SoLuongToiDa = @SoLuongToiDa, SoLuongHong = @SoLuongHong WHERE MaThietBi = @MaThietBi AND IDPhong = @IDPhong";
+                    string sql = @"UPDATE QuanLyThietBiPhong SET TenThietBi = @TenThietBi, SoLuongThietBi = @SoLuongThietBi, SoLuongToiDa = @SoLuongToiDa, SoLuongHong = @SoLuongHong WHERE MaThietBi = @MaThietBi AND MaPhong = @MaPhong";
 
                     SqlCommand cmd = new SqlCommand(sql, conn);
                     cmd.Parameters.AddWithValue("@MaThietBi", txtMaThietBi.Text);
                     cmd.Parameters.AddWithValue("@TenThietBi", txtTenThietBi.Text);
-                    cmd.Parameters.AddWithValue("@IDPhong", txtIDPhong.Text);
+                    cmd.Parameters.AddWithValue("@MaPhong", txtIDPhong.Text);
                     cmd.Parameters.AddWithValue("@SoLuongThietBi", nudSoLuongThietBi.Value);
                     cmd.Parameters.AddWithValue("@SoLuongToiDa", nudSoLuongToiDa.Value);
                     cmd.Parameters.AddWithValue("@SoLuongHong", nudSoLuongHong.Value);
@@ -343,7 +354,7 @@ namespace QLKTX_SV
         {
             if (txtMaThietBi.Text == "" || txtIDPhong.Text == "")
             {
-                MessageBox.Show("Vui lòng nhập Mã thiết bị và ID phòng cần xóa!",
+                MessageBox.Show("Vui lòng nhập mã thiết bị và mã phòng cần xóa!",
                                 "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
@@ -354,10 +365,10 @@ namespace QLKTX_SV
                 {
                     conn.Open();
 
-                    string sql = "DELETE FROM QuanLyThietBiPhong WHERE MaThietBi = @MaThietBi AND IDPhong = @IDPhong";
+                    string sql = "DELETE FROM QuanLyThietBiPhong WHERE MaThietBi = @MaThietBi AND MaPhong = @MaPhong";
                     SqlCommand cmd = new SqlCommand(sql, conn);
                     cmd.Parameters.AddWithValue("@MaThietBi", txtMaThietBi.Text);
-                    cmd.Parameters.AddWithValue("@IDPhong", txtIDPhong.Text);
+                    cmd.Parameters.AddWithValue("@MaPhong", txtIDPhong.Text);
 
                     int rows = cmd.ExecuteNonQuery();
 
