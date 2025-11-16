@@ -1,0 +1,15 @@
+D:\C#\QLKTX_SV\bin\Debug\QLKTX_SV.exe.config
+D:\C#\QLKTX_SV\bin\Debug\QLKTX_SV.exe
+D:\C#\QLKTX_SV\bin\Debug\QLKTX_SV.pdb
+D:\C#\QLKTX_SV\obj\Debug\QLKTX_SV.csproj.AssemblyReference.cache
+D:\C#\QLKTX_SV\obj\Debug\QLKTX_SV.Form1.resources
+D:\C#\QLKTX_SV\obj\Debug\QLKTX_SV.Properties.Resources.resources
+D:\C#\QLKTX_SV\obj\Debug\QLKTX_SV.csproj.GenerateResource.cache
+D:\C#\QLKTX_SV\obj\Debug\QLKTX_SV.csproj.CoreCompileInputs.cache
+D:\C#\QLKTX_SV\obj\Debug\QLKTX_SV.exe
+D:\C#\QLKTX_SV\obj\Debug\QLKTX_SV.pdb
+D:\C#\QLKTX_SV\obj\Debug\QLKTX_SV.exe.config
+D:\C#\QLKTX_SV\bin\Debug\Guna.UI2.dll
+D:\C#\QLKTX_SV\obj\Debug\QLKTX_SV.csproj.Up2Date
+D:\C#\QLKTX_SV\obj\Debug\QLKTX_SV.Quan_ly_thiet_bi_phong.resources
+D:\C#\QLKTX_SV\obj\Debug\QLKTX_SV.Quan_ly_hoa_don_dien_nuoc.resources
