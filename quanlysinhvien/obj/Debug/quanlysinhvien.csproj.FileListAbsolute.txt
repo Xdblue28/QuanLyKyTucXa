@@ -1,0 +1,16 @@
+D:\C#\quanlysinhvien\quanlysinhvien\bin\Debug\quanlysinhvien.exe.config
+D:\C#\quanlysinhvien\quanlysinhvien\bin\Debug\quanlysinhvien.exe
+D:\C#\quanlysinhvien\quanlysinhvien\bin\Debug\quanlysinhvien.pdb
+D:\C#\quanlysinhvien\quanlysinhvien\bin\Debug\Guna.UI2.dll
+D:\C#\quanlysinhvien\quanlysinhvien\obj\Debug\quanlysinhvien.csproj.AssemblyReference.cache
+D:\C#\quanlysinhvien\quanlysinhvien\obj\Debug\quanlysinhvien.Properties.Resources.resources
+D:\C#\quanlysinhvien\quanlysinhvien\obj\Debug\quanlysinhvien.csproj.GenerateResource.cache
+D:\C#\quanlysinhvien\quanlysinhvien\obj\Debug\quanlysinhvien.csproj.CoreCompileInputs.cache
+D:\C#\quanlysinhvien\quanlysinhvien\obj\Debug\quanlysi.CD340BCC.Up2Date
+D:\C#\quanlysinhvien\quanlysinhvien\obj\Debug\quanlysinhvien.exe
+D:\C#\quanlysinhvien\quanlysinhvien\obj\Debug\quanlysinhvien.pdb
+D:\C#\quanlysinhvien\quanlysinhvien\obj\Debug\quanlysinhvien.exe.config
+D:\C#\Quanlysinhvien\quanlysinhvien\obj\Debug\quanlysinhvien.FrmSuaThongTinSinhVien.resources
+D:\C#\Quanlysinhvien\quanlysinhvien\obj\Debug\quanlysinhvien.FrmQuanLyThongTinSinhVien.resources
+D:\C#\Quanlysinhvien\quanlysinhvien\obj\Debug\quanlysinhvien.FrmThemThongTinSinhVien.resources
+D:\C#\Quanlysinhvien\quanlysinhvien\obj\Debug\quanlysinhvien.FormQuanLyTraPhong.resources
