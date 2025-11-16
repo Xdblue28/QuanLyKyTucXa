@@ -47,6 +47,8 @@ namespace QLKTX_SV
             dt = new DataTable();
             ad.Fill(dt);
             dgvThanhToan.DataSource = dt;
+            dgvThanhToan.ClearSelection();
+            dgvThanhToan.CurrentCell = null;
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -222,7 +224,7 @@ namespace QLKTX_SV
                         cmd.Parameters.AddWithValue("@Gmail", txtGmail.Text);
                         cmd.Parameters.AddWithValue("@DiaChi", txtDiaChi.Text);
                         cmd.Parameters.AddWithValue("@CCCD", txtCCCD.Text);
-                        cmd.Parameters.AddWithValue("@IDPhong", txtIDPhong.Text);
+                        cmd.Parameters.AddWithValue("@MaPhong", txtIDPhong.Text);
                         cmd.Parameters.AddWithValue("@Ngay", dateThanhToan.Value.Date);
                         try
                         {
@@ -239,7 +241,9 @@ namespace QLKTX_SV
                         cmd.ExecuteNonQuery();
                     }
 
-                    MessageBox.Show("✅ Xác nhận thanh toán thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Xác nhận thanh toán thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    dgvThanhToan.ClearSelection();
+                    dgvThanhToan.CurrentCell = null;
                     LoadData();
                 }
             }

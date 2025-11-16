@@ -16,7 +16,7 @@ namespace QLKTX_SV
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Quan_ly_thiet_bi_phong());
+            Application.Run(new Thanh_toan_tien_phong());
         }
     }
 }
