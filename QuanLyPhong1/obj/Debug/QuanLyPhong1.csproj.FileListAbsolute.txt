@@ -1,0 +1,17 @@
+C:\Users\Admin\source\repos\QuanLyPhong1\QuanLyPhong1\bin\Debug\QuanLyPhong1.exe.config
+C:\Users\Admin\source\repos\QuanLyPhong1\QuanLyPhong1\bin\Debug\QuanLyPhong1.exe
+C:\Users\Admin\source\repos\QuanLyPhong1\QuanLyPhong1\bin\Debug\QuanLyPhong1.pdb
+C:\Users\Admin\source\repos\QuanLyPhong1\QuanLyPhong1\bin\Debug\Guna.UI2.dll
+C:\Users\Admin\source\repos\QuanLyPhong1\QuanLyPhong1\obj\Debug\QuanLyPhong1.csproj.AssemblyReference.cache
+C:\Users\Admin\source\repos\QuanLyPhong1\QuanLyPhong1\obj\Debug\QuanLyPhong1.Form1.resources
+C:\Users\Admin\source\repos\QuanLyPhong1\QuanLyPhong1\obj\Debug\QuanLyPhong1.Properties.Resources.resources
+C:\Users\Admin\source\repos\QuanLyPhong1\QuanLyPhong1\obj\Debug\QuanLyPhong1.csproj.GenerateResource.cache
+C:\Users\Admin\source\repos\QuanLyPhong1\QuanLyPhong1\obj\Debug\QuanLyPhong1.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\QuanLyPhong1\QuanLyPhong1\obj\Debug\QuanLyPh.AFDA3010.Up2Date
+C:\Users\Admin\source\repos\QuanLyPhong1\QuanLyPhong1\obj\Debug\QuanLyPhong1.exe
+C:\Users\Admin\source\repos\QuanLyPhong1\QuanLyPhong1\obj\Debug\QuanLyPhong1.pdb
+C:\Users\Admin\source\repos\QuanLyPhong1\QuanLyPhong1\obj\Debug\QuanLyPhong1.exe.config
+C:\Users\Admin\source\repos\QuanLyPhong1\QuanLyPhong1\bin\Debug\Database1.mdf
+C:\Users\Admin\source\repos\QuanLyPhong1\QuanLyPhong1\bin\Debug\Database1_log.ldf
+C:\Users\Admin\source\repos\QuanLyPhong1\QuanLyPhong1\obj\Debug\QuanLyPhong1.FormThem.resources
+C:\Users\Admin\source\repos\QuanLyPhong1\QuanLyPhong1\obj\Debug\QuanLyPhong1.FormSua.resources
